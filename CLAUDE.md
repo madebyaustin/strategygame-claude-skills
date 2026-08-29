@@ -25,7 +25,7 @@ Generic (multi-site, MCP-connected):
 ## General rules (apply to all skills)
 
 - All content output in American English.
-- Always read the project context document before writing. The URL is provided in the routine prompt.
+- For strategygame.org work, the site context (voice, audience, categories, image and link conventions) is embedded in the strategygame-* skills themselves — no external context document is needed. For the generic mcp-web-* skills, read the project context document whose URL is provided in the task or routine prompt.
 - Default publish status: `draft`. Never publish live without explicit confirmation (a routine prompt that grants standing confirmation counts, subject to its safety gate).
 - Always check existing site content via MCP before writing or planning, to avoid duplication.
 - Do not fabricate internal link URLs. Only link to posts confirmed to exist on the site via MCP.
