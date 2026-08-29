@@ -17,7 +17,7 @@ This skill is hardwired to one site. Everything below — categories, voice, ima
 
 This is measured, not theoretical. In one production session, every scripted check (word count, link budget, em dashes, AI-tell phrases) passed 100% of the time, and every unscripted rule (image size, block markup, appid verification, featured-image distinctness) was violated 100% of the time — including a wrong game's key art reaching a live page.
 
-So: Phase 5 has a pre-write script, Phase 8b has a post-write script, and **both are mandatory**. Do not replace either with careful reading.
+So: Phase 5 has a pre-write script, Phase 8b has a post-write script, and **both are mandatory**. Do not replace either with careful reading. If a check misfires on a legitimate pattern, fix the script (and report the fix), never hand-wave the FAIL.
 
 ---
 
@@ -184,6 +184,8 @@ Send this on **both create and update**:
 <!-- /wp:image -->
 ```
 
+Comparison tables use the `wp:table` block (`<figure class="wp-block-table">`); they are welcome in pillars and count separately from image figures in the Phase 8b check.
+
 ### FAQ section (every article)
 
 Close with a `Frequently Asked Questions` H2, then a Rank Math FAQ block of 5 Q&As after the closing section. Pick People-Also-Ask-style queries: the best pick, is it free, platform/availability, one beginner how-to, and a "games like X". Answers run 2–4 sentences in house voice, no em dashes or semicolons. At most one internal link across the whole FAQ, and the FAQ does not count against the link budget.
@@ -273,6 +275,10 @@ Watch for false positives: "not justify" contains "not just", and a literal "rea
 3. **Apple App Store** (mobile-only): `https://itunes.apple.com/search?term={name}&entity=software&limit=3`, fields `screenshotUrls` / `artworkUrl512`. Upscale by rewriting the size suffix (`406x228bb.jpg` → `2208x1242bb.jpg`).
 4. **Neither store** (Nintendo-exclusive, Riot titles, delisted classics): Nintendo store pages are client-rendered and usually fail plain fetching. Use official publisher art from a related listing, or key art of a modern game in the same series, and **make the caption honest about it** (Wargroove art in an Advance Wars entry, captioned as the modern stand-in). Never use competitor blogs, never AI-generate game imagery.
 
+### Cloud egress fallback (restricted routine environments)
+
+Some cloud routine environments block direct egress to store.steampowered.com, itunes.apple.com, and even strategygame.org. Proven fallback (production, 2026-08-30): resolve appdetails/search JSON through an available web-fetch tool (Composio fetch/Exa or WebFetch) instead of curl, and let `wp_upload_media_from_url` do the download itself, since WordPress fetches the image server-side and container egress does not apply. Verification requirements are unchanged. The clean fix is adding the store domains and the site to the environment's Allowed domains; until that is done, this fallback is the expected path, not an error.
+
 ### Verify the source before uploading — always
 
 **Never guess a Steam appid from memory.** Guessed appids silently return a different game's art. This happened twice: `1085660` was assumed to be Gears Tactics and is actually Destiny 2 (that art reached production as a featured image), and a guessed Halo Wars appid returned a Train Simulator DLC.
@@ -315,15 +321,18 @@ Read the created post back with `wp_get_post`, resolve the featured image URL fr
 import re
 content = ...       # post content returned by wp_get_post
 featured_url = ...  # media URL of _thumbnail_id
-expected_figures = 4   # ranked entries with images, or planned figure count for guides
+expected_figures = 4   # IMAGE figures: ranked entries with images (tables and other wp blocks are checked separately)
 
-figures = content.count('<figure')
+figures = content.count('<figure class="wp-block-image')   # image figures only
 blocks  = content.count('wp-block-image')
+allfigs = content.count('<figure')
+wpfigs  = content.count('<figure class="wp-block-')          # image, table, and other wp blocks
 srcs    = re.findall(r'<img src="([^"]+)"', content)
 links   = re.findall(r'href="([^"]+)"', content)
 
 checks = [
-  ("every figure is a block",   figures == blocks == expected_figures),
+  ("image figures match plan",  figures == blocks == expected_figures),
+  ("all figures are wp blocks", allfigs == wpfigs),
   ("featured not reused in body", featured_url not in content),
   ("no 460px header art",       not any('header.jpg' in s for s in srcs)),
   ("no tiny steam assets",      not any('capsule' in s for s in srcs)),
@@ -336,7 +345,7 @@ for name, ok in checks:
     print(("PASS " if ok else "FAIL ") + name)
 ```
 
-The first three checks exist because each corresponds to a defect that reached a live page.
+The featured/header/capsule checks exist because each corresponds to a defect that reached a live page. The image-figure count excludes `wp:table` and other non-image blocks on purpose — a comparison table in a pillar is not a markup error.
 
 ## Phase 9 — Update the content plan sheet
 
