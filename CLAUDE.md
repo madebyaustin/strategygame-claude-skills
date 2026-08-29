@@ -17,7 +17,7 @@ Generic (multi-site, MCP-connected):
 
 ## Content plan sheet conventions (all skills and routines depend on these)
 
-- Sheet: "Strategygame.org Content Plan 2026" (ID `1L4OnCL7ewMOCluDRUChu3zAiZ6vL2mMEMoXZJ4bXI70` — see skill files for the authoritative ID). Tabs: `Keywords Research` + one tab per month (May, Jun, Sep, ...).
+- Sheet: "Strategygame.org Content Plan 2026" (ID `1L4OnCL7ewMOCluDRUChu3zAiZ6vL2mMEMeXZJ4bXI70`). Tabs: `Keywords Research` + one tab per month (May, Jun, Sep, ...).
 - Plan item #N sits on sheet row N+1 (row 1 is the header). Always read a row back and confirm the `#` column before writing.
 - Status values in monthly tabs: `Todo` (to write), `Draft`, `Published`, `Refresh` (refresh work stream — daily routines must skip these), `Refreshed`.
 - Status values in Keywords Research: `Todo`, `Done` (+ Article link), `Planned`, `Skip`.
