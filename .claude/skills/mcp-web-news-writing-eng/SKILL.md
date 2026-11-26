@@ -169,3 +169,7 @@ When handing off, summarize: headline, slug, word count, all links placed, any f
 - It does not optimize for a specified SEO keyword.
 - It does not publish to live without explicit user confirmation.
 - It does not fabricate sources, links, or quotes under any circumstances.
+
+## Editorial image export
+
+Export article covers, inline illustrations, charts, scorecards and infographics without an added logo, wordmark, signature, watermark or brand panel. Keep the original scene, useful labels, data and source credits. Preserve branding naturally present in source material. Check the final cover crop and the phone layout.

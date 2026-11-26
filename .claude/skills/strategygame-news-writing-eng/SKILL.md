@@ -155,9 +155,9 @@ Beyond the answer-first lead and takeaways:
 
 ## Phase 6 — Featured image (every article, before the post is created)
 
-### Logo on original article artwork
+### Editorial image export
 
-For a new article, sign each staff-made chart, diagram, infographic or illustration, including an original featured image. In this repository, use the transparent master exports in [assets/editorial-logos](../../../assets/editorial-logos/). Choose `strategygame-logo-on-light-1200.png` on a light background or `strategygame-logo-on-dark-1200.png` on a dark one. Composite the file as a single layer at final layout, preserve its proportions and check legibility in the mobile crop. Use the supplied lettering and helmet. Leave publisher key art, game screenshots and third-party photography with their original credit.
+Export article covers, inline illustrations, charts, scorecards and infographics without an added logo, wordmark, signature, watermark or brand panel. Keep the original scene, useful labels, data and source credits. Preserve branding naturally present in source material. Check the final cover crop and the phone layout.
 
 News posts need a featured image so they render properly in archives, the homepage feed, and social cards. One featured image is required; 1–2 in-body images are welcome when a relevant screenshot adds something.
 

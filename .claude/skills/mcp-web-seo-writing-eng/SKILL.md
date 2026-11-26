@@ -250,3 +250,7 @@ When handing off, summarize: headline (H1), SEO title tag, meta description, slu
 - It does not stuff keywords or build pages whose primary purpose is ranking rather than serving a reader.
 - It does not publish to live without explicit user confirmation.
 - It does not fabricate sources, links, citations, or quotes under any circumstances.
+
+## Editorial image export
+
+Export article covers, inline illustrations, charts, scorecards and infographics without an added logo, wordmark, signature, watermark or brand panel. Keep the original scene, useful labels, data and source credits. Preserve branding naturally present in source material. Check the final cover crop and the phone layout.
