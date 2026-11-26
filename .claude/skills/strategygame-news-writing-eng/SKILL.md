@@ -1,6 +1,6 @@
 ---
 name: strategygame-news-writing-eng
-description: Write a complete, publication-ready news article for strategygame.org from a single reference URL. Use this skill whenever Austin sends a source URL and wants it turned into a news post for strategygame.org — "write a news article from this," "rewrite this for our news section," "làm tin này," "viết bài news từ link này," or just a bare URL pasted with the intent to publish a news piece. The skill runs autonomously from the URL: it reads and fact-checks the source against independent outlets, checks the site for duplicate coverage, learns the house voice, writes a strategic-gamer-focused piece in natural human prose (no AI tells, no em dashes), sources a featured image, optimizes for both SEO and AEO (answer engines), links into the site's clusters, and creates a WordPress draft with Rank Math meta. Do NOT use for evergreen rankings/guides/reviews (use strategygame-seo-writing-eng), opinion pieces, sponsored content, or any site other than strategygame.org.
+description: "Write a complete, publication-ready news article for strategygame.org from a single reference URL. Use this skill whenever Austin sends a source URL and wants it turned into a news post for strategygame.org — \"write a news article from this,\" \"rewrite this for our news section,\" \"làm tin này,\" \"viết bài news từ link này,\" or just a bare URL pasted with the intent to publish a news piece. The skill runs autonomously from the URL: it reads and fact-checks the source against independent outlets, checks the site for duplicate coverage, learns the house voice, writes a strategic-gamer-focused piece in natural human prose (no AI tells, no em dashes), sources a featured image, optimizes for both SEO and AEO (answer engines), links into the site's clusters, and creates a WordPress draft with Rank Math meta. Do NOT use for evergreen rankings/guides/reviews (use strategygame-seo-writing-eng), opinion pieces, sponsored content, or any site other than strategygame.org."
 ---
 
 # News Writing for Strategygame.org (English)
@@ -154,6 +154,10 @@ Beyond the answer-first lead and takeaways:
 - If a sentence exists only to host a keyword or a link, cut it.
 
 ## Phase 6 — Featured image (every article, before the post is created)
+
+### Logo on original article artwork
+
+For a new article, sign each staff-made chart, diagram, infographic or illustration, including an original featured image. In this repository, use the transparent master exports in [assets/editorial-logos](../../../assets/editorial-logos/). Choose `strategygame-logo-on-light-1200.png` on a light background or `strategygame-logo-on-dark-1200.png` on a dark one. Composite the file as a single layer at final layout, preserve its proportions and check legibility in the mobile crop. Use the supplied lettering and helmet. Leave publisher key art, game screenshots and third-party photography with their original credit.
 
 News posts need a featured image so they render properly in archives, the homepage feed, and social cards. One featured image is required; 1–2 in-body images are welcome when a relevant screenshot adds something.
 

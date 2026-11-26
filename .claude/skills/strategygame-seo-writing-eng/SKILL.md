@@ -256,6 +256,10 @@ Watch for false positives: "not justify" contains "not just", and a literal "rea
 
 ## Phase 6 — Images
 
+### Logo on original article artwork
+
+For a new article, sign each staff-made chart, diagram, infographic or illustration, including an original featured image. In this repository, use the transparent master exports in [assets/editorial-logos](../../../assets/editorial-logos/). Choose `strategygame-logo-on-light-1200.png` on a light background or `strategygame-logo-on-dark-1200.png` on a dark one. Composite the file as a single layer at final layout, preserve its proportions and check legibility in the mobile crop. Use the supplied lettering and helmet. Leave publisher key art, game screenshots and third-party photography with their original credit.
+
 **In a ranking, every ranked entry gets its own image** inside its section (after the entry's first paragraph), plus a featured image. For guides, choose screenshots at the steps where the interface, terrain or result matters. Adjust their number to the length and complexity of the explanation.
 
 ### Asset sizes — get these right
