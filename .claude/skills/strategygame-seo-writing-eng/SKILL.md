@@ -343,7 +343,6 @@ links   = re.findall(r'href="([^"]+)"', content)
 checks = [
   ("image figures match plan",  figures == blocks == expected_figures),
   ("all figures are wp blocks", allfigs == wpfigs),
-  ("featured not reused in body", featured_url not in content),
   ("no 460px header art",       not any('header.jpg' in s for s in srcs)),
   ("no tiny steam assets",      not any('capsule' in s for s in srcs)),
   ("every img has alt",         content.count('<img') == content.count('alt="')),
@@ -356,6 +355,18 @@ for name, ok in checks:
 ```
 
 The featured/header/capsule checks exist because each corresponds to a defect that reached a live page. The image-figure count excludes `wp:table` and other non-image blocks on purpose — a comparison table in a pillar is not a markup error.
+
+### Featured-image check for StrategyGame
+
+The single-post layout inserts the Open Graph image below the byline. Set the featured attachment in WordPress and keep its credit as text. Each illustration inside the article should show a different scene.
+
+Before publishing or refreshing, save the raw Gutenberg body returned by WordPress and run the [featured-image checker](scripts/check_featured_image.py) from this skill directory. Supply the actual attachment URL and ID. Run it again with the Open Graph image URL when the post has a separate social image or relies on the first inline image as a fallback.
+
+```sh
+python3 scripts/check_featured_image.py post-body.html --cover "$featured_url" --id "$attachment_id"
+```
+
+A failing result blocks publication. The checker catches a Gutenberg featured-image block, reuse of the attachment ID and size or format variants of the same upload. On the live post, confirm one visible cover below the byline at desktop and phone widths. Scroll through the article so lazy-loaded images resolve, and compare those images with the cover. Inspect visually when the same scene could have been uploaded under another filename.
 
 ## Phase 9 — Update the content plan sheet
 
