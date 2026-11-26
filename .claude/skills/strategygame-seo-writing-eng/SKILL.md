@@ -1,6 +1,6 @@
 ---
 name: strategygame-seo-writing-eng
-description: "Write a complete, publication-ready SEO article for strategygame.org, including images, links, meta data, and a WordPress draft — or refresh an existing article when the plan row's Content Type is refresh. Use this skill whenever Austin asks to write an article for strategygame.org — by content plan row number (\"làm tiếp #6\", \"viết bài #12\", \"write article #7 from the June plan\"), by keyword (\"write an SEO article targeting best tower defense games\"), or by title from the Strategygame.org Content Plan 2026 sheet — and whenever he asks to refresh, update, or rework an existing strategygame.org article. Also trigger when he asks to \"test\" article production, redo a draft, or produce any non-news evergreen piece (ranking, guide, primer, review) for strategygame.org. The skill handles the full pipeline: plan-row intake, SERP research, fact-check, drafting in the site's voice, per-game images from Steam/App Store, length-based link budget, Rank Math meta, category assignment, and draft creation via the WordPress MCP. Do NOT use for breaking news (use mcp-web-news-writing-eng) or for other websites (this skill is hardwired to strategygame.org)."
+description: "Write or refresh evergreen SEO articles for strategygame.org from a plan row, keyword or title. Covers rankings, guides, primers, reviews and production tests, from plan intake and fact-checking to site voice, official gameplay images, comparisons, inline citations, link budgets, Rank Math metadata and a WordPress draft. Use for new articles and refresh rows. For breaking news use the dedicated news skill."
 ---
 
 # SEO Writing for Strategygame.org
@@ -256,7 +256,7 @@ Watch for false positives: "not justify" contains "not just", and a literal "rea
 
 ## Phase 6 — Images
 
-**In a ranking, every ranked entry gets its own image** inside its section (after the entry's first paragraph), plus a featured image. Guides get a featured image and 2–3 contextual screenshots.
+**In a ranking, every ranked entry gets its own image** inside its section (after the entry's first paragraph), plus a featured image. For guides, choose screenshots at the steps where the interface, terrain or result matters. Adjust their number to the length and complexity of the explanation.
 
 ### Asset sizes — get these right
 
@@ -288,6 +288,12 @@ Confirm the appid via an independent source — `WebSearch` for the game name pl
 **App Store images get the same discipline.** The iTunes search API matches loosely — confirm the result's `trackName` and `artistName` (publisher) match the intended game before using its `screenshotUrls`, and record `game = trackId, verified via apps.apple.com/...` just like an appid line. Mobile-only games have no Steam appid; the appid rule applies per-game to Steam-sourced art only.
 
 **Record the verification.** For every game, keep `game name = appid (or trackId), verified via <URL>` and reproduce that list in the handoff. If you cannot produce the line, you did not verify it.
+
+### Visuals that help readers choose or play
+
+Review the full article in page order. In a ranking, keep the verified gameplay screenshot for each game and add a compact comparison table near the start when the entries are easier to choose side by side. Pick distinctions that change the reader’s choice, such as campaign scope, pacing or platform support. In a guide, use a diagram where sequence or positioning is hard to follow. Use charts for sourced, comparable numbers with units and dates. Replace repeated prose with a short interpretation. An illustrated shortlist that already answers the comparison needs no extra decoration.
+
+Use native WordPress table blocks with clear headers and concise cells. Check actual gameplay, credits, alt text, the featured crop, and chart or table readability on a phone-width preview. Place links to evidence in the relevant sentence or beside the data they support. Keep source URLs in the research handoff and omit a second public Sources or References list. During a refresh, preserve unique end references by linking them to the supported claims before removing the list.
 
 ## Phase 7 — Link budget
 
